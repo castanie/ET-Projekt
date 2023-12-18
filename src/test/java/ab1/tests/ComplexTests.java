@@ -5,6 +5,7 @@ import ab1.NFAFactory;
 import ab1.NFAProvider;
 import ab1.Transition;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -160,11 +161,11 @@ public class ComplexTests {
     private NFA buildCharLanguage(char c) {
         var instance = factory.buildNFA("START");
         instance.addTransition(
-            Transition.builder()
-                .fromState("START")
-                .readSymbol(c)
-                .toState("ACCEPT")
-                .build()
+                Transition.builder()
+                        .fromState("START")
+                        .readSymbol(c)
+                        .toState("ACCEPT")
+                        .build()
         );
         instance.addAcceptingState("ACCEPT");
         instance.finalizeAutomaton();
@@ -173,4 +174,5 @@ public class ComplexTests {
 
         return instance;
     }
+
 }

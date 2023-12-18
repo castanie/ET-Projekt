@@ -60,7 +60,7 @@ public class FinalizeTests {
 
         assertThrows(
                 FinalizedStateException.class,
-                () -> instance.kleeneStar()
+                instance::kleeneStar
         );
     }
 
@@ -70,7 +70,7 @@ public class FinalizeTests {
 
         assertThrows(
                 FinalizedStateException.class,
-                () -> instance.plusOperator()
+                instance::plusOperator
         );
     }
 
@@ -100,7 +100,7 @@ public class FinalizeTests {
 
         assertThrows(
                 FinalizedStateException.class,
-                () -> instance.complement()
+                instance::complement
         );
     }
 
@@ -113,6 +113,5 @@ public class FinalizeTests {
                 () -> instance.union(instance)
         );
     }
-
 
 }
